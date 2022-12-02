@@ -35,9 +35,9 @@ int64_t calculate( function_t round )
 
 void part_1()
 {
-    auto round = []( int oponent, int player )
+    auto round = []( int opponent, int player )
     {
-        return 3 * ( ( player - oponent + 4 ) % 3 )
+        return 3 * ( ( player - opponent + 4 ) % 3 )
             + player + 1;
     };
 
@@ -46,9 +46,9 @@ void part_1()
 
 void part_2()
 {
-    auto round = []( int oponent, int result )
+    auto round = []( int opponent, int result )
     {
-        return ( oponent + result + 2 ) % 3 + 1
+        return ( opponent + result + 2 ) % 3 + 1
             + 3 * result;
     };
 
