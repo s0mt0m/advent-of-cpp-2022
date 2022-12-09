@@ -25,7 +25,7 @@ auto parse_crates( std::ifstream &input )
     {
         std::string_view line( *it );
 
-        for ( int i = 0; i < columns; ++i, line.remove_prefix( 4 ) )
+        for ( std::size_t i = 0; i < columns; ++i, line.remove_prefix( 4 ) )
             if ( !line.empty() && line[ 1 ] != ' ' )
                 crates[ i ].push_back( line[ 1 ] );
     }
