@@ -8,13 +8,13 @@ void evaluate( const function_t &check )
 {
     std::ifstream input( "input" );
 
-    std::size_t cycle = 1;
-    std::size_t value = 1;
+    int64_t cycle = 1;
+    int64_t value = 1;
 
     auto check_cycles = [ & ]( std::size_t count )
     {
-        for ( std::size_t i = 0; i < count; ++i, ++cycle )
-            check( cycle, value );
+        for ( std::size_t i = 0; i < count; ++i )
+            check( cycle++, value );
     };
 
     for ( std::string line; std::getline( input, line ), line != ""; )
@@ -31,8 +31,8 @@ void evaluate( const function_t &check )
 
 void part_1()
 {
-    std::size_t score = 0;
-    auto check_strength = [ & ]( std::size_t cycle, std::size_t value )
+    int64_t score = 0;
+    auto check_strength = [ & ]( int64_t cycle, int64_t value )
     {
         if ( ( cycle + 20 ) % 40 == 0 )
             score += value * cycle;
@@ -46,9 +46,10 @@ void part_1()
 void part_2()
 {
     std::string display;
-    auto draw_pixel = [ & ]( std::size_t cycle, std::size_t value )
+    auto draw_pixel = [ & ]( int64_t cycle, int64_t value )
     {
-        const bool draw = value <= cycle % 40 && cycle % 40 < value + 3;
+        const auto pos = cycle % 40 == 0 ? 40 : cycle % 40;
+        const bool draw = value <= pos && pos < value + 3;
         display += draw ? '#' : '.';
     };
 
