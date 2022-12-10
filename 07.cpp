@@ -33,7 +33,7 @@ struct dir : file
 
 dir parse_fs()
 {
-    std::ifstream input( "input" );
+    std::ifstream input( "input/07" );
 
     dir root( "/" );
     std::stack< dir * > path( { &root } );
@@ -133,11 +133,5 @@ void part_2()
     const auto needed = fill_sizes( root ) - 40'000'000;
 
     std::cout << smallest( root, needed ) << std::endl;
-}
-
-int main()
-{
-    part_1();
-    part_2();
 }
 

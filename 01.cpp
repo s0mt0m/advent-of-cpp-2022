@@ -17,9 +17,9 @@ int64_t read_number( std::ifstream &stream )
 }
 
 template< std::size_t size >
-int64_t max_sum( std::string filepath )
+int64_t max_sum()
 {
-    std::ifstream input( filepath );
+    std::ifstream input( "input/01" );
 
     std::array< int64_t, size + 1 > maxes;
     maxes.fill( std::numeric_limits< int64_t >::min() );
@@ -35,17 +35,11 @@ int64_t max_sum( std::string filepath )
 
 void part_1()
 {
-    std::cout << max_sum< 1 >( "input" ) << std::endl;
+    std::cout << max_sum< 1 >() << std::endl;
 }
 
 void part_2()
 {
-    std::cout << max_sum< 3 >( "input" ) << std::endl;
-}
-
-int main()
-{
-    part_1();
-    part_2();
+    std::cout << max_sum< 3 >() << std::endl;
 }
 

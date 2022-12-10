@@ -16,7 +16,7 @@ bool check_unique( std::string_view window )
 
 int move( std::size_t count )
 {
-    std::ifstream input( "input" );
+    std::ifstream input( "input/06" );
     std::string line;
     std::getline( input, line );
 
@@ -35,11 +35,5 @@ void part_1()
 void part_2()
 {
     std::cout << move( 14 ) << std::endl;
-}
-
-int main()
-{
-    part_1();
-    part_2();
 }
 

@@ -7,7 +7,7 @@
 template< typename predicate_t >
 int overlaps( predicate_t condition )
 {
-    std::ifstream input( "input" );
+    std::ifstream input( "input/04" );
     int score = 0;
 
     for ( std::string line; std::getline( input, line ), line != ""; )
@@ -41,11 +41,5 @@ void part_2()
     };
 
     std::cout << overlaps( overlap ) << std::endl;
-}
-
-int main()
-{
-    part_1();
-    part_2();
 }
 

@@ -6,7 +6,7 @@
 template< typename function_t >
 void evaluate( const function_t &check )
 {
-    std::ifstream input( "input" );
+    std::ifstream input( "input/10" );
 
     int64_t cycle = 1;
     int64_t value = 1;
@@ -58,11 +58,5 @@ void part_2()
     std::string_view answer( display );
     for ( std::size_t i = 0; i < 240; i += 40 )
         std::cout << answer.substr( i, 40 ) << std::endl;
-}
-
-int main()
-{
-    part_1();
-    part_2();
 }
 

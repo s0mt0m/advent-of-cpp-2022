@@ -43,7 +43,7 @@ void move( vec2 &src, vec2 dest )
 template< std::size_t length >
 int simulate_string()
 {
-    std::ifstream input( "input" );
+    std::ifstream input( "input/09" );
 
     std::set< vec2 > visited;
     std::array< vec2, length > rope;
@@ -74,11 +74,5 @@ void part_1()
 void part_2()
 {
     std::cout << simulate_string< 10 >() << std::endl;
-}
-
-int main()
-{
-    part_1();
-    part_2();
 }
 

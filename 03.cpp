@@ -32,7 +32,7 @@ int64_t priority()
     static_assert( line_count > 0 );
     static_assert( word_count > 0 );
 
-    std::ifstream input( "input" );
+    std::ifstream input( "input/03" );
     int64_t priority = 0;
 
     while ( true )
@@ -63,11 +63,5 @@ void part_1()
 void part_2()
 {
     std::cout << priority< 3, 1 >() << std::endl;
-}
-
-int main()
-{
-    part_1();
-    part_2();
 }
 

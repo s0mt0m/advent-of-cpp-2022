@@ -59,7 +59,7 @@ bool is_visible( const forest_t &forest, int x, int y )
 template< typename function_t >
 auto explore_forest( const function_t &rate )
 {
-    std::ifstream input( "input" );
+    std::ifstream input( "input/08" );
 
     forest_t forest;
     std::size_t score = 0;
@@ -99,11 +99,5 @@ void part_2()
     };
 
     std::cout << explore_forest( high ) << std::endl;
-}
-
-int main()
-{
-    part_1();
-    part_2();
 }
 

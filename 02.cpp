@@ -19,7 +19,7 @@ int get( int tool )
 template< typename function_t >
 int64_t calculate( function_t round )
 {
-    std::ifstream input( "input" );
+    std::ifstream input( "input/02" );
     int64_t score = 0;
 
     for ( std::string line; std::getline( input, line ), line != ""; )
@@ -53,11 +53,5 @@ void part_2()
     };
 
     std::cout << calculate( round ) << std::endl;
-}
-
-int main()
-{
-    part_1();
-    part_2();
 }
 

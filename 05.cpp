@@ -35,7 +35,7 @@ auto parse_crates( std::ifstream &input )
 
 std::string move( bool take_one )
 {
-    std::ifstream input( "input" );
+    std::ifstream input( "input/05" );
 
     auto crates = parse_crates( input );
 
@@ -73,11 +73,5 @@ void part_1()
 void part_2()
 {
     std::cout << move( false ) << std::endl;
-}
-
-int main()
-{
-    part_1();
-    part_2();
 }
 
